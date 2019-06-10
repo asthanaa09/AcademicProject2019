@@ -1,0 +1,58 @@
+databse tables used in this project
+
+Table 1----seller
+--------------------------------------------------
+seller_id       varchaar2(50) primary key,
+password        varchar2(20) not null
+
+sequence_name seller_id_seq start with 10001
+
+Table -2 ----Book_Stock
+--------------------------------------------------
+seller_id       number(5) foreign key
+seller_appli_date  date
+book_title      not null
+ISBN            number() primary key
+discription     varchar() not null
+book_img        bfile(directory,'image path')
+book_sample(pdf,doc) bfile(director,'file path')
+language          varchar2() not null
+author          varchar2() not null
+pages            number(4)
+copies           number(5)
+price            number()
+
+Table-3 user_shipping_address
+--------------------------------------------------
+ Name                                      Null?    Type
+ ----------------------------------------- -------- -------------------------
+
+ USER_ID                                   NOT NULL VARCHAR2(50)
+ SHIPPING_ADDRESS                          NOT NULL VARCHAR2(200)
+ PINCODE                                   NOT NULL VARCHAR2(6)
+
+Table-4) login_dtls
+--------------------------------
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+
+ USER_ID                                   NOT NULL VARCHAR2(50)
+ PASSWORD                                  NOT NULL VARCHAR2(50)
+ FIRST_NAME                                         VARCHAR2(100)
+ MID_NAME                                           VARCHAR2(50)
+ LAST_NAME                                          VARCHAR2(50)
+ MOBILENO                                  NOT NULL VARCHAR2(10)
+ GENDER                                    NOT NULL VARCHAR2(6)
+
+Table5 shoppping_cart
+---------------------------------
+
+SQL> desc shopping_cart;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+
+ USER_ID                                   NOT NULL VARCHAR2(50)
+ ISBN                                      NOT NULL VARCHAR2(200)
+ QUANTITY                                           NUMBER(3)
+ CREATEDATE                                         DATE
+ SELLER_ID                                 NOT NULL VARCHAR2(200)

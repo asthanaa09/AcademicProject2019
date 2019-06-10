@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<style>
+    .btnn {
+        background-color: #ff9e77;
+        border: none;
+        color: white;
+        padding: 4px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .subcategoryAnimate {
+        position: relative;
+        -webkit-animation: mymove 1s;  /* Safari 4.0 - 8.0 */
+        -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+        animation: mymove 1s;
+        animation-fill-mode: forwards;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes mymove {
+        from {top: 0px;}
+        to {top: 10px; }
+    }
+
+    @keyframes mymove {
+        from {top: 0px;}
+        to {top: 10px; }
+    }
+
+
+</style>  
+
+
+
+
+<script type="text/javascript">
+    jssor_1_slider_init = function () {
+
+        var jssor_1_SlideoTransitions = [
+            [{b: 0, d: 600, y: -290, e: {y: 27}}],
+            [{b: 0, d: 1000, y: 185}, {b: 1000, d: 500, o: -1}, {b: 1500, d: 500, o: 1}, {b: 2000, d: 1500, r: 360}, {b: 3500, d: 1000, rX: 30}, {b: 4500, d: 500, rX: -30}, {b: 5000, d: 1000, rY: 30}, {b: 6000, d: 500, rY: -30}, {b: 6500, d: 500, sX: 1}, {b: 7000, d: 500, sX: -1}, {b: 7500, d: 500, sY: 1}, {b: 8000, d: 500, sY: -1}, {b: 8500, d: 500, kX: 30}, {b: 9000, d: 500, kX: -30}, {b: 9500, d: 500, kY: 30}, {b: 10000, d: 500, kY: -30}, {b: 10500, d: 500, c: {x: 125.00, t: -125.00}}, {b: 11000, d: 500, c: {x: -125.00, t: 125.00}}],
+            [{b: 0, d: 600, x: 535, e: {x: 27}}],
+            [{b: -1, d: 1, o: -1}, {b: 0, d: 600, o: 1, e: {o: 5}}],
+            [{b: -1, d: 1, c: {x: 250.0, t: -250.0}}, {b: 0, d: 800, c: {x: -250.0, t: 250.0}, e: {c: {x: 7, t: 7}}}],
+            [{b: -1, d: 1, o: -1}, {b: 0, d: 600, x: -570, o: 1, e: {x: 6}}],
+            [{b: -1, d: 1, o: -1, r: -180}, {b: 0, d: 800, o: 1, r: 180, e: {r: 7}}],
+            [{b: 0, d: 1000, y: 80, e: {y: 24}}, {b: 1000, d: 1100, x: 570, y: 170, o: -1, r: 30, sX: 9, sY: 9, e: {x: 2, y: 6, r: 1, sX: 5, sY: 5}}],
+            [{b: 2000, d: 600, rY: 30}],
+            [{b: 0, d: 500, x: -105}, {b: 500, d: 500, x: 230}, {b: 1000, d: 500, y: -120}, {b: 1500, d: 500, x: -70, y: 120}, {b: 2600, d: 500, y: -80}, {b: 3100, d: 900, y: 160, e: {y: 24}}],
+            [{b: 0, d: 1000, o: -0.4, rX: 2, rY: 1}, {b: 1000, d: 1000, rY: 1}, {b: 2000, d: 1000, rX: -1}, {b: 3000, d: 1000, rY: -1}, {b: 4000, d: 1000, o: 0.4, rX: -1, rY: -1}]
+        ];
+
+        var jssor_1_options = {
+            $AutoPlay: 1,
+            $Idle: 2000,
+            $CaptionSliderOptions: {
+                $Class: $JssorCaptionSlideo$,
+                $Transitions: jssor_1_SlideoTransitions,
+                $Breaks: [
+                    [{d: 2000, b: 1000}]
+                ]
+            },
+            $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+            },
+            $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+            }
+        };
+
+        var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+        /*#region responsive code begin*/
+
+        var MAX_WIDTH = 980;
+
+        function ScaleSlider() {
+            var containerElement = jssor_1_slider.$Elmt.parentNode;
+            var containerWidth = containerElement.clientWidth;
+
+            if (containerWidth) {
+
+                var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                jssor_1_slider.$ScaleWidth(expectedWidth);
+            } else {
+                window.setTimeout(ScaleSlider, 30);
+            }
+        }
+
+        ScaleSlider();
+
+        $Jssor$.$AddEvent(window, "load", ScaleSlider);
+        $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+        $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+        /*#endregion responsive code end*/
+    };
+</script>
+<div controller="Home">
+    <div id="singlePage"> <div class="container-fluid bg-dark">
+            <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
+                <!-- Loading Screen -->
+                <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+                    <img src="img/b1.jpeg" style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;"  />
+                </div>
+                <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
+                    <div>
+                        <img data-u="image" src="img/Libraries.jpeg" />
+                        <div data-t="0" style="position:absolute;top:320px;left:30px;width:500px;height:40px;font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;background-color:rgba(255,188,5,0.8);">Anurag Asthana</div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="img/Libraries.jpeg" />
+                        <div data-ts="flat" data-p="1360" style="position:absolute;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
+                            <!--<div data-t="1" style="position:absolute;top:-50px;left:125px;width:500px;height:40px;font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;background-color:rgba(255,188,5,0.8);"></div>-->
+                        </div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="img/qw.jpg" />
+                        <div data-ts="flat" data-p="1360" style="position:absolute;top:0px;left:0px;width:980px;height:380px;">
+                            <div data-t="2" style="position:absolute;top:30px;left:-505px;width:500px;height:40px;font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;background-color:rgba(255,188,5,0.8);">Finger catchable right to left</div>
+                        </div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="img/qq.jpg" />
+                        <div data-t="3" style="position:absolute;top:30px;left:30px;width:500px;height:40px;font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;background-color:rgba(255,188,5,0.8);">responsive, scale smoothly</div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="img/pexels-photo-1122865.jpeg" />
+                        <div data-t="4" style="position:absolute;top:30px;left:30px;width:500px;height:40px;font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;background-color:rgba(255,188,5,0.8);">image, text, and custom layers</div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="img/aj.jpg" />
+                        <div data-t="5" style="position:absolute;top:30px;left:600px;width:500px;height:40px;font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;background-color:rgba(255,188,5,0.8);">tons of transition type</div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="img/pexels-photo-1122865.jpeg" />
+                        <div data-t="6" style="position:absolute;top:30px;left:30px;width:500px;height:40px;font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;background-color:rgba(255,188,5,0.8);">visual slider maker</div>
+                    </div>
+                    <div data-b="0">
+                        <img data-u="image" src="img/lib.jpeg" />
+                        <div data-t="7" style="position:absolute;top:-50px;left:30px;width:500px;height:40px;font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;background-color:rgba(255,188,5,0.8);">play in and play out</div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="img/lrli.jpeg" />
+                        <div data-ts="flat" data-p="1360" style="position:absolute;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
+                            <div data-t="8" data-ts="preserve-3d" style="position:absolute;top:25px;left:150px;width:250px;height:250px;overflow:hidden;background-color:rgba(40,177,255,0.6);">
+                                <div data-t="9" style="position:absolute;top:100px;left:25px;width:200px;height:50px;font-family:Oswald,sans-serif;font-size:24px;font-weight:200;line-height:2.08;">A Child Layer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="img/hv.jpg" />
+                        <div data-ts="flat" data-p="1360" style="position:absolute;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
+                            <div data-t="10" style="position:absolute;top:25px;left:100px;width:300px;height:260px;font-family:Oswald,sans-serif;font-size:24px;font-weight:200;line-height:1.25;padding:15px 15px 15px 15px;box-sizing:border-box;background-color:rgba(40,177,255,0.6);background-clip:padding-box;">This is full customized content layer.<br />​<br />
+
+                                Everything is allowed.<br />​<br />You can insert
+
+                                <a href="http://wwww.jssor.com">
+                                    a link
+                                </a> or an image
+
+                                <img src="img/icon_chrome.png" /> here.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bullet Navigator -->
+                <div data-u="navigator" class="jssorb052" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                    <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                        <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                        </svg>
+                    </div>
+                </div>
+                <!-- Arrow Navigator -->
+                <div data-u="arrowleft" class="jssora053" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                    <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                    </svg>
+                </div>
+                <div data-u="arrowright" class="jssora053" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                    <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                    </svg>
+                </div>
+            </div></div></div>
+    <script type="text/javascript">jssor_1_slider_init();</script>
+    <!-- #endregion Jssor Slider End -->
+
+    <!--image slider HTML AND JS ended here -->
+    <!--filter result-->
+    <!--log in form-->
+
+    </br>
+
+    <!--shop cards-->
+
+    <div class="container-fluid">
+        <div class="row boxShadow" >
+            <div class="col-md-3" >
+                <!--creating bookcategory section and filter section-->
+
+                <div class="row  ">
+                    <div class="col-md-12  " ng-controller="hideAndShow" >
+                        <img src="img/bookcat.png" alt=" bookCategory image"></br><hr>
+                        <div  id="Category"> <input type="button" class="btnn "  value="{{buttonvalue}}" ng-click="hideandshow = !hideandshow" style="width:307px;border:none;">
+                            <div  ng-show="hideandshow"  class="subcategoryAnimate">
+                                <a href=""  style="text-decoration: none;"><div  style="height:10px;">  <font color="gray">Architectural Structure & design</font></div></a></br><hr>
+                                <a href="" style="text-decoration: none" ><div  style="height:10;">  <font color="gray">Architecture: Professional pratice</font></div></a></br><hr>
+                                <a href="" style="text-decoration: none" ><div  style="height:10px;"> <font color="gray">History Of Architecture</font></div></a></br><hr>
+                                <a href="" style="text-decoration: none" ><div  style="height:10px;">  <font color="gray">Individual Architecture * Architectural Firm</font></div></a></br><hr>
+                                <a href="" style="text-decoration: none" ><div  style="height:10px;">  <font color="gray">Landscape  Architects & architectur</font>e</div></a></br><hr>
+                                <a href="" style="text-decoration: none"  ><div   style="height:10px;">  <font color="gray">Professional nterior design</font></div></a></br><hr>
+                                <a href="" style="text-decoration: none" ><div  style="height:10px;">  <font color="gray"> Public building: civic,commercial,industrial,etc</font></div></a></br><hr>
+                                <a href="" style="text-decoration: none" ><div  style="height:10px;">  <font color="gray">Religious Building</font></div></a></br><hr>
+                                <a href="" style="text-decoration: none" ><div  style="height:10px;">  <font color="gray">Residential building,domestic buildings</font></div></a></br><hr>
+                                <a href="" style="text-decoration: none" ><div style="height:10px;">  <font color="gray">Theory of Architecture</font></a></div></br>                      <hr>
+                            <a href="" style="text-decoration: none" ><div  style="height:10px;"> <font color="gray"> Rsidential building,domestic buildings</font></a></div></br><hr>
+                    </div>
+
+                </div>
+                <!--atrs and form categogr-->
+                <div  id="Category"  > <input type="button" class="btnn" value="{{subartcat}}" ng-click="artCat = !artCat" style="width:307px;border:none;">
+                    <div  ng-show="artCat" class="subcategoryAnimate">
+                        <a href="" style="text-decoration: none;"><div  style="height:10px;"> <font color="gray">Body Art & tattoing</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"><font color="gray">Decoratives arts</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Drawing & drawings</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div style="height:10px;"> <font color="gray">Non-graphic art forms</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div   style="height:10px;"> <font color="gray">Other graphic art forms</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;">  <font color="gray">Painting & Paintngs</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Prints & Printmaking</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Texttile artworks</font></div></a><hr>
+
+                    </div>
+
+                </div>
+                <!--biograpgy and memories category-->
+                <div  id="Category" style="border:none;"  > <input type="button" class="btnn" value="{{subartcatbio}}" ng-click="bioraphy = !bioraphy" style="width:307px;border:none;">
+                    <div  ng-show="bioraphy" class="subcategoryAnimate">
+                        <a href="" style="text-decoration: none;"><div  style="height:10px;"> <font color="gray">Biography:general</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"><font color="gray">Diaries,letters & journals</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Memories</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div style="height:10px;"> <font color="gray">True Stories</font></div></a><hr>
+
+                    </div>
+
+                </div>
+                <!--body mind and spirit category-->
+                <div  id="Category"  > <input type="button" class="btnn" value="{{subartcatbody}}" ng-click="bodyCat = !bodyCat" style="width:307px;border:none;">
+                    <div  ng-show="bodyCat" class="subcategoryAnimate">
+                        <a href="" style="text-decoration: none;"><div  style="height:10px;"> <font color="gray">Complementry tharapies, healing & healths</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"><font color="gray">Dreams & their interpretation</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Feng Sui</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div style="height:10px;"> <font color="gray">Fortune telling & diviation</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div   style="height:10px;"> <font color="gray">Mind,body,spirit,:mediation & visualization</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;">  <font color="gray">Mind,body,spirit:thougt & Practice </font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Unexplained phenomena/the Paranomal</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Psychic power & Psychic phenomena</font></div></a><hr>
+
+                    </div>
+
+                </div>
+                <!--computer and phenomenan-->
+                <div  id="Category"  > <input type="button" class="btnn" value="{{subartcatcomputer}}" ng-click="computerCat = !computerCat" style="width:307px;border:none;">
+                    <div  ng-show="computerCat" class="subcategoryAnimate">
+                        <a href="" style="text-decoration: "><div  style="height:10px;"> <font color="gray">Business Application</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"><font color="gray">Computer Certification</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Computer hardware</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div style="height:10px;"> <font color="gray">Computer networking & communication</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div   style="height:10px;"> <font color="gray">Computer programming/software developement</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;">  <font color="gray">Computer science </font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">computer security</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Computer :general</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Database</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Digital lifestyle</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Graphical & digital mediaapplication</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Operating System</font></div></a><hr>
+
+                    </div>
+
+                </div>
+                <!--cookery food & wine-->
+                <div  id="Category"  > <input type="button" class="btnn" value="{{subartcatcookery}}" ng-click="cookeryCat = !cookeryCat" style="width:307px;border:none;">
+                    <div  ng-show="cookeryCat" class="subcategoryAnimate"> 
+                        <a href="" style="text-decoration: none;"><div  style="height:10px;"> <font color="gray">Beverages</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"><font color="gray">Cigars & smoking</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Cookery by ingredient</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div style="height:10px;"> <font color="gray">Cookery dishes & courses</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div   style="height:10px;"> <font color="gray">Cooking for parties</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;">  <font color="gray">Cooking with specific gadget </font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">General cookery & recipies</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Health & wholefood cookery</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">National and regional cousine</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Preserving and Freezing</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Quick & easy cooking</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Tv/celebrities chef cooking</font></div></a><hr>
+
+                    </div>
+
+                </div>
+                <!--dictionaries and languages-->
+                <div  id="Category"  > <input type="button" class="btnn" value="{{subartcatlanguage}}" ng-click="dictionariesCat = !dictionariesCat" style="width:307px;border:none;">
+                    <div  ng-show="dictionariesCat" class="subcategoryAnimate"> 
+                        <a href="" style="text-decoration:none"><div  style="height:10px;"> <font color="gray">Language references & generals</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"><font color="gray">Linguistics</font></div></a></br><hr>
+
+                    </div>
+
+                </div>
+ <!--Environmental & geography-->
+                 <div  id="Category"  > <input type="button" class="btnn" value="{{subartcatEnvironment}}" ng-click="environment = !environment" style="width:307px;border:none;">
+                    <div  ng-show="environment" class="subcategoryAnimate"> 
+                        <a href="" style="text-decoration: none;"><div  style="height:10px;"> <font color="gray">Earth Sciences</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"><font color="gray">Geography</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Regional & area planning</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div style="height:10px;"> <font color="gray">The Environment</font></div></a><hr>
+                        
+                    </div>
+
+                </div>
+                 <!--Fiction-->
+                <div  id="Category"  > <input type="button" class="btnn" value="{{subartcatFiction}}" ng-click="fiction = !fiction" style="width:307px;border:none;">
+                    <div  ng-show="fiction" class="subcategoryAnimate"> 
+                        <a href="" style="text-decoration: none;"><div  style="height:10px;"> <font color="gray">Adventure</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"><font color="gray">Classic Fiction</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Crime Fiction</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div style="height:10px;"> <font color="gray">Erotic Fiction</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div   style="height:10px;"> <font color="gray">Fantasy</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;">  <font color="gray">Fiction:special feature </font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Grphic novel</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Historical fiction</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Horror & ghost stories</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Modern & contemporary Fiction</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Romance</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Science fiction</font></div></a><hr>
+
+                    </div>
+</div>
+                 <!--History & Humanaties-->
+                     <div  id="Category"  > <input type="button" class="btnn" value="{{subartcathistory}}" ng-click="history = !history" style="width:307px;border:none;">
+                    <div  ng-show="history" class="subcategoryAnimate"> 
+                        <a href="" style="text-decoration: none;"><div  style="height:10px;"> <font color="gray">General & world history</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"><font color="gray">History: earliest to present time</font></div></a></br><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">History:specific event & topic</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div style="height:10px;"> <font color="gray">History: theory & methods</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div   style="height:10px;"> <font color="gray">Millitary History</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;">  <font color="gray">Alternatives belief system </font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Aspect of religion</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Chiristianity</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Hinduism</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Islam</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Buddism</font></div></a><hr>
+                        <a href="" style="text-decoration: none"><div  style="height:10px;"> <font color="gray">Juadiasm</font></div></a><hr>
+
+                    </div>
+
+
+
+
+
+
+            </div>
+                
+
+
+            </div>
+            <!--                        <div class="hamburgerBtn" onclick="openButton(this)">
+                                        
+                                        <div class="bar1"></div>
+                                        <div class="bar2"></div>
+                                        <div class="bar3"></div>
+                                        <p class="glow">Category</p>
+                                    </div></div>-->
+            <!--                    <div class="col-md-2">filter</div>-->
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+    <div class="col-md-9"> 
+
+
+
+        <!--//nested routing-->
+        <div ui-view="HomePageData"></div>
+
+    </div>
+
+</center></div></div>
+
+
+
+</div>
+

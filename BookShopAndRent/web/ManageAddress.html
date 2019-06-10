@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+ <style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 4px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+</style>  
+        
+        <h5>Your Address</h5><hr>
+<div controller="userAddress"  id="addressBar">
+        
+    <div class="row" style="border-bottom: 1px solid lightgray;">
+           
+            <div class="col-md-6">
+
+
+                <input type="text"  value="anurag asthamnsdkwqjkqskjqdnknd2kle"   id="address" name="address" style="width:500px;border:none;"></br></br>
+                <input type="text"  value="226017"   id="pincode" name="address" style="width:500px;border:none;"></br>
+                    <button type="submit" class="button" id="save" style="display:none;">Save</button></br>
+
+              
+
+            </div>
+            <div class="col-md-6">
+                 <Button type="button" class="TitleBtn " id="editBtn" onclick="edit()">  <font color="blue">Edit</font></button><span> </span><Button type="button" class="TitleBtn" id="cancelBtn" style="display:none" onclick="cancel()"><font color="blue" >Cancel</font></button>
+            
+                
+            </div>
+            
+
+
+        </div>
+        
+           
+        </div>
+        </br>
+        <!--//for adding new address bar-->
+     <div class="row">
+  <div class="col-md-6"><h5 >Add New Address</h5></div>
+  <div class="col-md-6"> <button type="button" class="button" id="addingNewAdd" onclick="shoForm()" >Add</button></div>
+</div>
+     
+        
+        <form  style="display:none" id="addressForm" >
+        <table class="table table-borderless">
+             
+         <tr>
+            <td> <textarea rows="4" cols="50" class="form-control"  name="addAddress" id="addAddress" placeholder="Enter new Address" required></textarea></td>
+           
+        </tr> 
+          <tr>
+            <td> <input type="text" class="form-control" id="addPincode" name="addPincode" placeholder="123456" maxlength="6" required></td>
+        </tr> 
+          </tr> 
+          <tr>
+              <td>   <button type="submit" class="button" id="adding" >Save</button><span></span> <button type="button" class="button bg-danger" id="cnclAdding" onclick="hideAdd()" >Cancel</button></br>
+</td>
+        </tr> 
+            
+
+        
+        </table></form>
+            <!--//button for adding new address-->
+       
+    
+<script>
+    
+
+   document.getElementById("address").disabled = true;
+    document.getElementById("pincode").disabled = true;
+      document.getElementById("addressBar").disabled = true;
+   
+//   /for edit button
+function edit() {
+    
+                
+//    variablke fro button
+ let edit = document.getElementById("editBtn");
+    let  save = document.getElementById("save");
+    
+        let  cancel = document.getElementById("cancelBtn");
+    
+        if (cancel.style.display === "none") {
+    cancel.style.display = "inline";
+    save.style.display="inline";
+    edit.style.display="none";
+    
+    
+   document.getElementById("address").disabled = false;
+    document.getElementById("pincode").disabled = false;
+    document.getElementById("address").style.border = "1px solid black";
+     document.getElementById("pincode").style.border = "1px solid black";
+    document.getElementById("addressBar").disabled = false;
+    
+  }}
+    
+    
+   
+//   cansal button
+   
+ function cancel() {
+ 
+   let edit = document.getElementById("editBtn");
+    let  save = document.getElementById("save");    
+        let  cancel = document.getElementById("cancelBtn");
+    
+        if (edit.style.display === "none") 
+        {
+    cancel.style.display = "none";
+    save.style.display="none";
+    edit.style.display="inline";
+    document.getElementById("address").disabled = true;
+    document.getElementById("pincode").disabled = true;
+      document.getElementById("address").style.border = "none";
+   document.getElementById("pincode").style.border = "none";
+    document.getElementById("addressBar").disabled = true;
+        }
+    
+    
+    }   
+    function shoForm()
+    {
+      document.getElementById("addressForm").style.display="inline";  
+        
+        document.getElementById("addingNewAdd").style.display="none";  
+        
+    }
+   function hideAdd(){
+       
+        document.getElementById("addressForm").style.display="none" ;  
+         document.getElementById("addingNewAdd").style.display="inline";  
+       
+   }
+    </script>

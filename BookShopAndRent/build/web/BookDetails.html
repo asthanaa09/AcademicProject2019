@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+--><style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 52px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+    </style>
+    <!--controller="ShowBookDetail"-->
+    <div   ng-controller="loginchecking">
+
+    <!--design of the bookDetails page-->
+
+
+    <div class="container">
+        <div class="row border border-light">
+
+            <div class="col-md-6  "  >
+             <center>  <div class="border-right"> <img src="images/{{ bookDtls.bookImage }}" alt="Books pictures not available" style="height:500px;width:350px;padding-top:15px;"/>
+                 </div></br> <button type="button" class="button button2 bg-danger" >Add Cart</button><span>  </span><span> </span><button  class="button button2" ng-click="loginstatus()"> Buy Now</button></center></div>
+            <div class="col-md-6">
+                <table class="table table-borderless">
+                    <th>  {{ bookDtls.bookTitle}}</th>
+
+                    <tr>
+                        <td><b><font color="gray" >       <b><font color="Black" >  Price</font></b> <p class="card-text"><b><span><img src="img/Indian_Rupee_symbol_185519.png" style="height:15px;"></span><strong>{{ bookDtls.price}}</strong></b></p></font></b></td>
+
+                    </tr>
+                    <tr>
+                        <td><font color="gray" >       <b><font color="Black" >  isbn</font></b> <p class="card-text"><b><span></span>{{bookDtls.isbn}}</b></p></font></td>
+
+
+
+                    </tr>
+                    <tr>
+                       <td><font color="gray" >       <b><font color="Black" >  Language</font></b> <p class="card-text"><b><span></span> {{ bookDtls.bookLanguage}}</b></p></font></td>
+
+                   
+                    </tr>
+                     <tr>
+                       <td><font color="gray" >       <b><font color="Black" >  Author</font></b> <p class="card-text"><b><span></span>  {{ bookDtls.authour }}</b></p></font></td>
+
+                   
+                    </tr>
+                     <tr>
+                       <td><font color="gray" >       <b><font color="Black" >  Pages</font></b> <p class="card-text"><b><span></span>   {{ bookDtls.pageNo}}</b></p></font></td>
+
+                   
+                    </tr>
+                     <tr>
+                       <td><font color="gray" >       <b><font color="Black" > Get Sample</font></b> <p class="card-text"><b><span></span>      {{ bookDtls.bookSample }}</b></p></font></td>
+
+                   
+                    </tr>
+                     <tr>
+                       <td><p><font color="gray" >       <b><font color="Black" >  Discription</font></b> <p class="card-text"><b><span></span>    {{  bookDtls.discription}}</b></p></font></p></td>
+
+                   
+                    </tr>
+
+                </table>            
+
+
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+    <div ng-if="status.error=='false'">
+
+
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal3">
+
+            <!-- Modal content -->
+            <div class="modal3-content bg-light">
+                <span class="close" onclick="hide()">&times;</span>
+                <p>You are not logged in </p>
+            </div>
+
+        </div>
+    </div>
+    <div ng-if="status.error=='True'">
+        <!--<form action="./MakeOrder" method="get">--> 
+        
+            <div id="myModal" class="modal3"  >
+<!--ng-controller="makeOrder"-->
+            <!-- Modal content -->
+            <div class="modal3-content bg-light" ng-controller="makeOrder">
+                <span class="close" onclick="hide()">&times;</span>
+              
+                <div class="paymentDiv shadow bg-dark" style="height:50px"  >
+                    <img src="img/check.png" alt="logged in" style="margin-top:10px;margin-left:5px;"><span style="margin-top:30px;">   </span><font color="white" size="5"><b>LogIn</b> </font></br>
+                </div></br>
+              <!--/selecting address section-->
+                <div class="paymentDiv border border-light"  >
+                  <div class="shadow">
+                    <div class="paymentDiv border border-light bg-dark"  >  <img src="img/address.png" alt="logged in"><span>   </span> <font color="white" size="4"><b>Select Address</b> </font></br>
+                </div>
+                        <div class="paymentDiv border border-light" id="addContent" ng-controller="fetchShippingAddress">
+                           <div  class="border border-light"   >
+                                  <table> 
+                                   <tr> 
+                                     <td > 
+<!--                                         <select  class="form-control" ng-model="addressName" ng-options="add.address for add in addresses" name="address">
+                                          <option value="">Select Address</option>
+                                          </select></td>-->
+<!--                                          <td> <select  class="form-control" name="selectPincode" ng-options="add.pincode for add in addresses" ng-model="eventForm.selectPincode" name="pincode">
+                                          <option value="">Select pincode</option>
+                                          </select>
+                                          </td>-->
+                                          
+                                          <select  class="form-control" ng-model="addressName2">
+                                              <option value="" select disabled="">select Address</option>
+                                              <option ng-repeat="add in addresses">{{add.address}}</option>
+                                          </select></td>
+                                           <td> <select  class="form-control"  ng-model="selectPincode2" >
+                                                    <option value="" select disabled="">select Pincode</option>
+                                          <option ng-repeat="add in addresses">{{add.pincode}}</option>
+                                          </select> 
+                                          </td>
+                                      <td> <button type class="button button2 bg-danger" style="height:40px;margin-top:20px;padding: 10px 24px;" ng-click="continue2(addressName2,selectPincode2)"> Continue</button></td>
+                               
+                                   </tr>
+                               </table></br>
+                                  <!--//for adding new address bar-->
+     <div class="row">
+  <div class="col-md-6"><h5 >Add New Address</h5></div>
+  <div class="col-md-6"> <button type="button" class="button" id="addingNewAdd" onclick="shoForm()"  >Add</button></div>
+</div>
+     
+        
+        <form  style="display:none" id="addressForm"  ng-controller="addAddress">
+        <table class="table table-borderless">
+             
+         <tr>
+            <td> <textarea rows="4" cols="50" class="form-control"   placeholder="Enter new Address" ng-model="addressBar" required></textarea></td>
+           
+        </tr> 
+          <tr>
+            <td> <input type="text" class="form-control"  placeholder="123456" maxlength="6" ng-model="pincodeBar" required></td>
+        </tr> 
+          </tr> 
+          <tr>
+              <td>   <button type="button" class="button"  ng-click="save(addressBar,pincodeBar)" >Save</button><span></span> <button type="button" class="button bg-danger" id="cnclAdding" onclick="hideAdd()" >Cancel</button></br>
+</td>
+        </tr> 
+            
+
+        
+        </table></form>
+                            </div>
+                        </div></br>
+                        
+                        <!--adding new address form enden here-->
+                      <!--//order summary-->
+                      <div name="orderSummary" class="shadow" >
+                      <div class="paymentDiv border border-light bg-dark" >  <img src="img/ordersummary.png" alt="logged in"><span>   </span> <font color="white" size="4"><b>Order Summary</b> </font></br>
+                </div>
+                          
+                          <!--<div ng-controller="quantityUpdate"> <label>Successfully updated the quantity {{quantity}}</label></div>-->
+                          <div class="row" style="margin-top:10px;">
+                              
+                              <div class="col-md-6">
+                                    <img src="images/{{ bookDtls.bookImage }}" style="width:300px;height:300px">
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="row">
+                                      <div class="col-md-12"><label><font ><b>{{ bookDtls.bookTitle}}</b></font></label>   </div>    
+                                     
+                                  </div>
+                                     <div class="row">
+                                         <div class="col-md-12"> <label><font ><b>Price </b></font></label>   </div>    
+                                     
+                                  </div>
+                                  <div id="quantityMod">  
+                                  <div class="row">
+                                      <div class="col-md-12"><label ng-model="orderPrice"><font ><b>{{ bookDtls.price*quantity}}</b></font></label>   </b></font></label>     </div>    
+                                     
+                                  </div>
+                                     <div class="row" >
+                                      <div class="col-md-12"> <label><font ><b>Quantity </b></label></font>   </div>    
+                                     
+                                  </div>
+                                   <div class="row" >
+                                      <div class="col-md-12"> <label><font ><b><input class="form-control" type="number" ng-model="quantity" id="quantity" min="1" max=" {{ bookDtls.copies}}"></b></font></label>  </div>    
+                                      <label>Successfully updated the quantity <b>{{quantity}} </b> </label>
+                                  </div></div> 
+                                   <div class="row">
+                                        <label><font >Delivery in 3 days of placing</font></label>  </div>    
+                                     <div class="row">
+                                         <div class="col-md-12"> <button type class="button button2 bg-danger" ng-click="continue(bookDtls.isbn,bookDtls.price,bookDtls.sellerId)"> MakeOrder</button></div>    
+                                     
+                                  </div>
+                                  </div>
+                                 
+                                       
+                                      
+                                  
+                                  
+                              </div>
+                      
+                      
+                      
+                      </div>
+                          
+                          <!--payment section-->
+                            <div name="orderSummary" class="shadow" >
+                      <div class="paymentDiv border border-light bg-dark" >  <img src="img/payment.png" alt="logged in"><span>   </span> <font color="white" size="4"><b>Payment</b> </font></br>
+                </div>
+                          
+                       <!--payment design-->
+                       <input type="radio" name="tab"  ng-value="'cp'" onclick="show1();" ng-model="paymenOption" />
+                       <strong class="bg-gradient-warning">Card Payment</strong></br>
+                       <div id="div1" class="hide border border-light">
+                           <strong>Card payment</strong></br>
+                           <div><a ui-sref="Payment({orderid:order.orderId})"  class="btn bt btn-primary"><span><img src="img/btn.png"> Buy </span></a></div>
+                          
+                               
+                       </div>
+                       
+                       <input type="radio" name="tab" ng-value="'cod'" onclick="show2();" ng-model="paymenOption"  />
+                       <strong class="bg-gradient-warning ">Cod</strong></br>
+                       
+                       <!-- seconf -->
+                       <div id="div2" class="hide border border-light">
+                           <label>Your Order Id : <b>{{order}}</b></label></br>
+                         <label>You have to Pay</label><strong><Button ng-click="makePayment(bookDtls.quantity,bookDtls.isbn)">{{ bookDtls.price*quantity}}</strong></button>
+                               
+                       </div>
+
+                      
+                      </div>
+                          
+                          
+                         <div style="height:50px"></div> 
+                          
+                        
+                          
+                      
+                      </div>
+                      
+                      
+                      
+                      
+                        </div>
+                    
+                    
+                    </div>
+            
+            
+             
+            </div>
+            
+        
+        
+        
+               
+                
+                
+                
+                
+                
+                
+                
+                
+                
+         
+              
+            </div>
+
+        </div>
+    </div>
+
+
+
+<script>
+
+
+function hide(){
+// Get the modal
+var modal = document.getElementById('myModal');
+
+
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+location.reload();
+}
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+//script for selecting delievery address
+function selectAddress(){
+    
+    alert(document.querySelector('input[name="address"]:checked').value+" "+document.querySelector('input[name="pincode"]:checked').value);
+    
+   
+    
+    
+}
+function shoForm()
+    {
+      document.getElementById("addressForm").style.display="inline";  
+        
+        document.getElementById("addingNewAdd").style.display="none";  
+        
+    }
+   function hideAdd(){
+       
+        document.getElementById("addressForm").style.display="none" ;  
+         document.getElementById("addingNewAdd").style.display="inline";  
+       
+   }
+   function show1(){
+  document.getElementById('div2').style.display ='none';
+  
+   document.getElementById('div1').style.display = 'block';
+}
+function show2(){
+  document.getElementById('div2').style.display = 'block';
+  document.getElementById('div1').style.display ='none';
+  
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {{ bookDtls.sellerId }}
+
+  
+  
+    {{ bookDtls.bookLanguage}}
+   
+   
+    {{ bookDtls.copies}}
+  
+ 
+<style>
+    .hide {
+  display: none;
+}
+.modal3 {
+  /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal3 Content */
+.modal3-content {
+
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+#myDIV {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+}
+.paymentDiv{
+    width:900px;
+}
+</style>
+
+
+</div>

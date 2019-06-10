@@ -1,0 +1,521 @@
+.imgWidth{
+    width:1200px;
+    height:480px;
+}
+body{
+    margin: 0;
+    padding:0;
+    
+}
+.offer{
+    display:none;
+    
+}
+/*//Log in form//*/
+.logForm
+{
+    width:100%;
+    padding: 12px 20px;
+    margin:8px 0;
+    display:inline-block;
+    border:1px solid #ccc;
+    box-sizing: border-box;
+    
+}
+/*setting styles for buttons*/
+.logbutton{
+    backgroun-clor: #4CAF50;
+    color:white;
+    padding:14px 20px;/*what actualy is*/
+    margin:8px 0;
+    border:none;
+    cursor:pointer;
+    width: 100%;
+}
+.logbutton:hover{
+    opacity:0.8;
+    
+    
+}
+/* extra Styling fro cansal button*/
+.cancelbtn{
+    width:auto;
+    padding:10px 18px;
+    background-color:#f44336; 
+}
+/*center the image and position the close button*/
+.imgcontainer{/*img tag containe imgcontainer class here is the implementaion*/
+text-align:center;/*shift image to the center*/
+margin:24px 0 12px 0;
+position:relative;/*postion is relative with respct to di01*/
+
+    
+}
+img.avatar{
+    width:40%;
+    border-radius:20%;
+   height:200px;
+    
+}
+.container{/*this calss is used by the div tag which contain cancel and forgot password option*/
+        padding:16px;
+        
+}
+span.psw{
+    
+    float:right;
+    padding-top:16px;
+    
+}
+/*main div tag (id01) the modal(backgroun ) handeling*/
+
+/*/ *close Button(x))*/
+.closee{
+    position:absolute;
+   right:25px;
+   top:0;
+   color:#000;
+   font-size:35px;
+   font-weight:bold;
+}
+.closee:hover,.closee:focus{
+   color:red;
+   cursor:pointer;
+    
+}
+/*adding zoom animationanimating the from and----midea queries*/ 
+.animate {
+    -webkit-animation:animatezoom 0.6;
+        animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+/*changing style from span and cancelbuttonon extra small screens*/
+@media screen and (max-width:300px){
+    
+    span.psw{
+        display:block;
+        float:none;
+        
+    }
+    .cancelbtn{
+        width:100%;
+           
+    }
+    
+}
+/*srch button*/
+.srchBtn{
+   padding-top:5px;   
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    
+    
+}
+.inputField {
+    width: 500px;
+    height:45px;
+     border-radius:10px;
+    
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.inputField:focus {
+    width: 800px;
+}
+.modal{
+    display:none;/*by default display none*/
+    position:fixed;
+    z-index:1;/*sit on top*/
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow:auto;/*Enable scroll if needed*/
+    background-color:rgb(0,0,0);/*fallback color*/
+    background-color:rgba(0,0,0,0.4);/*Black and white mixed / opacity*/ 
+    padding-top:60px;}
+  
+/*implementing the modal-class in form which shows the login form tag*/
+.modal-content
+{
+    background-color:#fefefe;
+    margin:5% auto 15% auto;/*5% from top,15% from bottom and centered*/
+    border:1px solid #888;
+    width:80%;/*could be more or less,depending upopn screnn size*/
+}
+/*/registration css*/
+
+
+.cbox
+{
+ width:100%;
+paddign:0px;
+margin-top:10px;
+border:2px solid black;
+display:none;
+
+    
+}
+.colbox{
+    
+    
+    border:1px solid white;
+}
+.regbox{
+    margin-top:0px;
+    box-shadow: -1px 1px 40px 10px white;
+    /*/background:rgba(0,0,0,0.4);*/
+    
+}
+.labelc{
+    margin-top: 18px;
+    font-weight: normal;
+    color:black;
+    font-size:18px;
+    
+}
+.form-control{
+    backgrond:transparent;
+    border-radius:0px;
+    border:0px;
+    border-bottom: 1px solid black;
+    font-size:18px;
+    margin-top:15px;
+    
+    
+    
+}
+.gnradio{
+    margin-top:25px;
+   
+    
+}
+.btn-info{
+    margin-top:20px;
+    width:150px;
+    margin-left:80px;
+    
+    
+    
+}
+
+
+.glyphicon-pencil{
+    font-size:20px;
+    float:right;
+    margin-top:10px;
+    color:white;
+    
+    
+    
+}
+/*log out bar*/
+
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+/*.dropdown:hover .dropbtn {background-color: #3e8e41;}*/
+.TitleBtn
+{
+ border: none;
+ background:none;
+ outline: none;
+}
+/*shopping card css*/
+
+
+.bt span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.bt span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.bt:hover span {
+  padding-right: 25px;
+}
+
+.bt:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/*zoom*/
+
+.zoom {
+ 
+  transition: transform .5s;
+ 
+ 
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.2); 
+}
+/*/setting up html tags content*/
+.limitContentInTags {
+  width: 250px;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+
+}
+/*footer area design-----*/
+
+.ic{
+position: absolute;
+
+left: 50%;
+transform: translate(-50%, -50%);
+margin: 0;
+padding: 0;
+display: flex;
+
+}
+.ic li{
+list-style: none;
+margin: 0 40px;
+
+}
+.ic li .fa{
+font-size: 40px;
+color: #262626;
+line-height: 80px;
+transition: .5s;
+
+}
+.ic li a{
+position: relative;
+display: block;
+width: 80px;
+height: 80px;
+background-color: #fff;
+text-align: center;
+transform: perspective(100px) rotate(-30deg) skew(25deg) translate(0,0);
+transition: .5s;
+box-shadow: -20px 20px 10px rgb(0, 0, 0, 0.5);
+}
+.ic li a::before{
+content: "";
+position: absolute;
+top: 10px;
+left: -20px;
+height: 100%;
+width: 20px;
+background: #b1b1b1;
+transition: .5s;
+transform: rotate(0deg) skewY(-45deg);
+}
+.ic li a::after{
+content: "";
+position: absolute;
+top: 80px;
+left: -11px;
+height: 20px;
+width: 100%;
+background: #b1b1b1;
+transition: .5s;
+transform: rotate(0deg) skewX(-45deg);
+}
+.ic li a:hover{
+transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px, -20px);
+box-shadow: -50px 50px 50px rgb(0, 0, 0, 0.5);
+}
+.ic li:hover .fa{
+color: #fff;
+}
+.ic li a:hover{
+transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px, -20px);
+box-shadow: -50px 50px 50px rgb(0, 0, 0, 0.5);
+}
+.ic li:hover:nth-child(1) a{
+background: #3b5999;
+}
+
+.ic li:hover:nth-child(1) a:before{
+background: #2e4a86;
+}
+.ic li:hover:nth-child(1) a:after{
+background: #4a69ad;
+}
+.ic li:hover:nth-child(2) a{
+background: #55acee;
+}
+.ic li:hover:nth-child(2) a:before{
+background: #4184b7;
+}
+.ic li:hover:nth-child(2) a:after{
+background: #4d9fde;
+}
+.ic li:hover:nth-child(3) a{
+background: #dd4b39;
+}
+
+.ic li:hover:nth-child(3) a:before{
+background: #c13929;
+}
+.ic li:hover:nth-child(3) a:after{
+background: #e83322;
+}
+
+.ic li:hover:nth-child(4) a{
+background: #0077B5;
+}
+
+.ic li:hover:nth-child(4) a:before{
+background: #036aa0;
+}
+.ic li:hover:nth-child(4) a:after{
+background: #0d82bf;
+}
+
+.ic li:hover:nth-child(5) a{
+background: linear-gradient(#400080, transparent), linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
+}
+
+.ic li:hover:nth-child(5) a:before{
+background: linear-gradient(#400080, transparent), linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
+}
+.ic li:hover:nth-child(5) a:after{
+background: linear-gradient(#400080, transparent), linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
+}
+/*Hamburger Button*/
+.hamburgerBtn {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/*text glowing css*/
+.glow {
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+/*shadow class*/
+.boxShadow {
+  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+/*fixed position css*/
+.fixedProperty{
+    
+    
+    
+    position: absolute;
+ 
+    
+}
+
+/*on scroll top button*/
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: dark gray;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+   
+.anchorDecoration {
+    text-decoration: none !important;
+    
+}
+.data:hover {
+  background-color: yellow;
+}

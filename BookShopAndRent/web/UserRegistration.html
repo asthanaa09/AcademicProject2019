@@ -1,0 +1,124 @@
+
+<!--<script src="scripts/RegistrationValidation.js">
+                   </script>-->
+
+ <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+     
+      width: 100%;
+      height: 100%;
+      margin-top:50px;
+  }
+  </style>
+<div class="container-fluid bg-light ">
+<div class="container " id="regForm">
+        <div class="row shadow ">
+            <div class="col-sm-8 colbox text-left">
+               
+                
+                
+<div id="demo" class="carousel slide glow" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="img/r3.jpg" alt="Los Angeles" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="img/r2.jpg" alt="Chicago" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="img/r3.jpg" alt="New York" width="1100" height="500">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  
+</div>
+                
+                
+            </div>
+<!--slider are ended here--> 
+            <div class="col-sm-4 colbox regbox shadow"  >
+                <form action="./RegistrationVal" method="post" onsubmit="return regValidation()">
+                    <div class="row">
+                        <div class="col-md-6"> <h3 class="text-left">Register</h3></div>
+                        <div class="col-md-6"> <span class="glyphicon glyphicon-pencil"></span></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-4 "><label class="labelc">First Name :</label></div>
+                        <div class="col-md-8 "><input type="text" class="form-control" id="regFname" name="regFirstName" placeholder="ABS.etc" ></div>
+                        </br><span id="regFnameSpan" class="badge badge-light bg-danger"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 "><label class="labelc">Mid Name :</label></div>
+                        <div class="col-md-8 "><input type="text" class="form-control" id="regMname" name="regMidName" placeholder="ABS.etc" ></div>
+                        </br><span id="regMnameSpan" class="badge badge-light bg-danger"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 "><label class="labelc">Last Name :</label></div>
+                        <div class="col-md-8 "><input type="text" class="form-control" id="regLname" name="regLastName" placeholder="ABS.etc"></div>
+                        </br><span id="regLnameSpan" class="badge badge-light bg-danger"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 "><label class="labelc">Email :</label></div>
+                        <div class="col-md-8 "><input type="text" class="form-control"  id="regEmail" name="regEmail"  placeholder="ABS.etc" required>
+                            </br><span id="reguserEmailSpan" class="badge badge-light bg-danger"></span></div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 "><label class="labelc">Mobile No :</label></div>
+                        <div class="col-md-8 "><input type="text" class="form-control" id="regMobileNo" name="regMobNo" maxlength="10" placeholder="ABS.etc" required></div>
+                        </br><span id="regMobileSpan" class="badge badge-light bg-danger"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 "><label class="labelc">Password:</label></div>
+                        <div class="col-md-8 "><input type="password" class="form-control" id="regPassword" name="regPassword" placeholder="ABS.etc" required></div>
+                        </br><span id="regPasswordSpan" class="badge badge-light bg-danger"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 "><label class="labelc">Shippng Address :</label></div>
+                        <div class="col-md-8 "><textarea rows="5" cols="50" class="form-control"  name="regShipAdd" id="regShipAdd" placeholder="ABS.etc" required></textarea></div>
+
+                    </div>
+                     <div class="row">
+                        <div class="col-md-4 "><label class="labelc">Pincode:</label></div>
+                        <div class="col-md-8 "><input type="text" class="form-control" id="regPincode" name="regPincode" placeholder="123456" maxlength="6" required></div>
+                        </br><span id="regPincodeSpan" class="badge badge-light bg-danger"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 "><label class="labelc">Gender :</label></div>
+                        <div class="col-md-8 ">
+                            <input type="radio" class="gnradio" name="regGender" id="regGender" value="Male" checked ><small>Male</small>
+
+                            <input type="radio" class="gnradio" name="regGender" id="regGender" value="female" ><small>Female</small>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 justify-centered">
+                                <button type="submit" class="btn-info btn-danger">Submit</button>   
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </form>
+                </br>
+ </br>           </div>
+            <!--here is ended of col 2--->
+        </div>
+
+    </div></div>

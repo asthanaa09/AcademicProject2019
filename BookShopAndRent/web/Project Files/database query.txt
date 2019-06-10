@@ -1,0 +1,45 @@
+1----login_dtls
+-------------------------------------------------------------
+SQL> desc login_dtls
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------
+
+ USER_ID                                   NOT NULL VARCHAR2(50)
+ PASSWORD                                  NOT NULL VARCHAR2(50)
+
+2) seller
+------------------
+SQL> create table seller(seller_id varchar2(50) constraint p_k primary key,passw
+ord varchar2(50));
+
+----------------------------------------------------------------------------------------------
+3) Book_stock
+---------------
+create table book_stock
+(
+seller_id varchar2(50) constraint f_k references seller(seller_id) not null,
+
+seller_apply_date date not null,
+book_title varchar2(50) not null,
+ISBN varchar2(50) not null,
+discription varchar2(3500) not null,
+book_language varchar2(50) not null,
+authour varchar2(50) not null,
+pages number(10) not null check(pages between 50 and 9999),
+copies  number(5) default 1 not null,
+price  number(6,3) not null,
+book_image varcahr2(250) not null,
+book_sample varchar2(250)
+);
+/////////////////////////////////////
+working with bfile
+to store file path the unction is used that is "bfilename(directory object,filename)"
+
+4) user_shipping_address 
+
+
+SQL> create table user_shipping_address  (
+    user_id varchar2(50) not null constraint foreign_key references login_dtls
+on delete cascade,
+    shipping_address varchar2(200) not null,
+    pincode varchar2(6) not null);

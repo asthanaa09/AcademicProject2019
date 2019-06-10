@@ -1,0 +1,29 @@
+;;; 
+Export: Release 11.2.0.1.0 - Production on Sun Jun 9 21:48:46 2019
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+;;; 
+Connected to: Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+Starting "ANURAG"."SYS_EXPORT_TABLE_01":  anurag/******** tables=seller,payment,user_shipping_address,shopping_cart,book_stock,book_order,login_dtls directory=PROJECTFILES dumpfile=ProjectTableSchemas.DMP logfile=ProjectTablesSchemas.log 
+Estimate in progress using BLOCKS method...
+Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 384 KB
+Processing object type TABLE_EXPORT/TABLE/TABLE
+Processing object type TABLE_EXPORT/TABLE/INDEX/INDEX
+Processing object type TABLE_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type TABLE_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type TABLE_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "ANURAG"."BOOK_ORDER"                       22.75 KB      79 rows
+. . exported "ANURAG"."BOOK_STOCK"                       17.49 KB       7 rows
+. . exported "ANURAG"."LOGIN_DTLS"                       7.992 KB       9 rows
+. . exported "ANURAG"."PAYMENT"                          7.242 KB      12 rows
+. . exported "ANURAG"."SELLER"                           5.492 KB       2 rows
+. . exported "ANURAG"."USER_SHIPPING_ADDRESS"            6.562 KB      15 rows
+. . exported "ANURAG"."SHOPPING_CART"                        0 KB       0 rows
+Master table "ANURAG"."SYS_EXPORT_TABLE_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for ANURAG.SYS_EXPORT_TABLE_01 is:
+  D:\CORE JAVA PROJECT\NEW FOLDER\HTTML\UPLOADEDFILE\PROJECTTABLESCHEMAS.DMP
+Job "ANURAG"."SYS_EXPORT_TABLE_01" successfully completed at 21:49:16

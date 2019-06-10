@@ -1,0 +1,180 @@
+ <style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 4px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+input[type=text] {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+ 
+}
+.sh {
+  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+</style> 
+
+<!--// fro saved cards of client-->
+<div  >
+    <div id="savedCards" class="sh" >
+<table class="table table-borderless" >
+     <thead>
+            <tr>
+                <th><label><b><font color="gray">Your Saved Cards</font></b></label></th>
+
+
+            </tr>
+        </thead>
+    
+    
+    
+    
+<tr>
+    <td><label><b><font color="blue">Card bumber</font></b></label></td>
+   
+    <td><label><b><font color="blue">Card Holder Name</font></b></label></td>
+     <td><button type="button"  style="border:none;"><b>Delete</b></button></td>
+</tr>
+
+
+
+</table>    
+<!--<add card button>-->
+<div  id="addCardBtn">
+    <div class="row">
+  <div class="col-md-6"><h5 >Add New Card</h5></div>
+  <div class="col-md-6" > <button type="button" class="button" id="addingNewAdd" onclick="shoForm()" >Add</button></div>
+</div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<!--html ended here for above-->
+
+
+
+</br>
+
+
+<div   id="addCard" style="display:none;">
+   <form >
+    <table class="table table-borderless "  >
+        <thead>
+            <tr>
+                <th>Payment Details</th>
+
+
+            </tr>
+        </thead>
+        <tr>
+            
+            <td><label><b>Card Holder Name</b></label></td>
+        </tr>
+         <tr>
+            
+            <td colspan="4"><input type="text" placeholder="DD" id="cardHolerName" name="cardHolerName" style="width:400px"></td>
+        </tr>
+         <tr>
+            
+            <td><label><b>Card Number</b></label></td>
+        </tr>
+         <tr>
+            
+            <td colspan="4"><input type="text" placeholder="DD" id="cardNumber" name="cardNumber" style="width:400px"></td>
+        </tr>
+        
+        
+       
+        <tr>
+            
+            <td colspan="3"><label><b><font color="BLACK">EXPIRY DATE</font></b></label></td>
+            <td><label><b><font color="BLACK">CVV CODE</font></b></label></td>
+        </tr>
+        <tr >
+            
+            <td > <input type="text" placeholder="DD" id="expDay" name="expDay" style="width:100px"></td>
+            <td><input type="text" placeholder="MM" id="expMonth" name="expMonth" style="width:100px"></td>
+            <TD><input type="text" placeholder="YYYY" id="expYear" name="expYear" style="width:100px"></TD>
+            <TD><input type="text" placeholder="CVV "  id="cvv" name="cvv" style="width:100px"></TD>
+        </tr>
+
+  <tr>
+              <td>   <button type="submit" class="button bg-green" id="adding" >Save</button><span></span> <button type="button" class="button bg-danger" id="cnclAdding" onclick="hideAdd()" >Cancel</button></br>
+</td>
+        </tr> 
+
+
+
+    </table>
+
+</form>
+
+</div>
+
+    
+
+
+<!--//java script-->
+<script>
+    
+function hideAdd()// to hide the add card form
+{
+     let addCardBtn=document.getElementById("addCardBtn");
+    
+    if ( addCardBtn.style.display === "none") 
+        {
+    addCardBtn.style.display = "inline";
+   addCard.style.display="none";
+    
+    
+        }
+    
+    
+    
+    
+    
+}
+function shoForm()// to show the add card form
+{
+    
+    let addCard=document.getElementById("addCard");
+    
+    if ( addCard.style.display === "none") 
+        {
+    addCard.style.display = "inline";
+    addCardBtn.style.display="none";
+    
+    
+        }
+    
+    
+}
+
+
+
+</script>

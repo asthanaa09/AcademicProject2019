@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+        
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 4px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+table { 
+                border-collapse: collapse; 
+            }
+            .TitleBtn
+{
+ border: none;
+ background:none;
+ 
+}
+</style>  
+  
+       <div class="bg-light" ng-controller="updateProfile"> 
+      <form >
+         <table cellspacing="10"> 
+             <th> <label class="label">Personal Information</label></th>
+              <tr>
+                  <td> <Button type="button" class="TitleBtn " id="editBtn" onclick="edit()">  <font color="blue">Edit</font></button><span> </span><Button type="button" class="TitleBtn" id="cancelBtn" style="display:none" onclick="cancel()"><font color="blue" >Cancel</font></button></td>
+                  
+                
+             </tr>
+             <tr>
+                 <td> <input type="text" id="firstName"    ng-model="fName" > </td>
+                 <td> <input type="text" id="midName"  ng-model="midName" title="First Name"> </td>
+                 <td> <input type="text" id="lastName" ng-model="lastName" title="First Name"> </td>
+               
+             </tr>
+          
+            <tr>
+                 <td>Your Gender</td>
+                
+             </tr>
+               <!--bd gender value-->
+            
+             <tr id="dbGenderValue">
+                 <td><input type="text" id="dbgender" ng-model="gender" size="7" title="First Name"></td>                
+             </tr>
+             
+               <!--for edit gender vale-->
+           
+                <tr   id="editGender" style="display:none;">
+                 <td><pre style="text-decoration:none;"><input type="radio" class="gnradio" name="regGender" value="male" ng-model="editGender" checked >  <label>Male</label> <input type="radio" class="gnradio" name="regGender" id="regGender" value="female" ng-model="editGender" > <label> Female</pre><label></td>
+         
+             </tr>
+           
+              <tr>
+                  
+                 <td>Email Address </td>
+                  
+             </tr>
+              <tr>
+                  
+                
+                 <td> <input type="text" id="email" ng-model="email"  title="First Name"> </td>
+             
+                      
+             </tr>
+              <tr>
+                  
+                 <td>Contact Number</td>
+                   
+             </tr>
+              <tr>
+                  
+                
+                 <td> <input type="text" id="mobileno" ng-model="mobileNo"  title="First Name"  maxlength="10"> </td>
+             <td><button type="submit" class="button" id="save" style="display:none;" ng-click="update()">Save</button> </td>
+                      
+             </tr>
+             
+             
+             </table>
+          
+         
+      </form>   
+      
+      </div>
+      
+      
+      
+      
+        
+
+
+
+
+
+<script>
+    
+
+   document.getElementById("firstName").disabled = true;
+   document.getElementById("midName").disabled = true;
+   document.getElementById("lastName").disabled = true;
+   document.getElementById("dbgender").disabled = true;
+   document.getElementById("email").disabled = true;
+   document.getElementById("mobileno").disabled = true;
+   
+    
+
+
+    
+function edit() {
+    
+
+ //enabling all the input field to be active
+ 
+   document.getElementById("firstName").disabled = false;
+   document.getElementById("midName").disabled =  false;
+   document.getElementById("lastName").disabled = false;
+   document.getElementById("dbgender").disabled = false;
+   document.getElementById("email").disabled = false;
+   document.getElementById("mobileno").disabled =false;
+   document.getElementById("cancelBtn").style.display ="box";
+   
+//   showing cancel button and hide edit button
+
+ let edit = document.getElementById("editBtn");
+ let  cancel = document.getElementById("cancelBtn");
+  let  save = document.getElementById("save");
+  let  genderTag = document.getElementById("dbGenderValue");
+   let  editGenderTag = document.getElementById("editGender");
+ 
+ if (cancel.style.display === "none") {
+    cancel.style.display = "inline";
+    save.style.display="inline";
+    edit.style.display="none";
+    genderTag.style.display="none";
+    editGenderTag.style.display="inline";
+    
+  }}
+  
+ function cancel() {
+    
+
+   document.getElementById("firstName").disabled = true;
+   document.getElementById("midName").disabled = true;
+   document.getElementById("lastName").disabled = true;
+   document.getElementById("dbgender").disabled = true;
+   document.getElementById("email").disabled = true;
+   document.getElementById("mobileno").disabled = true;
+   
+//   showing cancel button and hide edit button
+
+ let edit = document.getElementById("editBtn");
+ let  cancel = document.getElementById("cancelBtn");
+  let  save = document.getElementById("save");
+  let  genderTag = document.getElementById("dbGenderValue");
+   let  editGenderTag = document.getElementById("editGender");
+ if (edit.style.display === "none") {
+    cancel.style.display = "none";
+    edit.style.display="inline";
+     save.style.display="none";
+        genderTag.style.display="inline";
+         editGenderTag.style.display="none";
+  }
+ 
+    }
+ 
+
+</script>
+   

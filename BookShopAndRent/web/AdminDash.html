@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#blah')
+                                .attr('src', e.target.result)
+                                .width(150)
+                                .height(200);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+
+        </script>
+
+
+
+
+
+
+<style>
+    
+    
+    
+    
+    
+    
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.img1{
+  border-radius: 50%;
+}
+/*side bar/*/
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+    <center><img src="img/adminpic.png" alt="Avatar" class="img1"></br>
+    <b><font color="white">Anurag</font></center>
+    <hr></br>
+  <a href="#about" >Manage users</a>
+ 
+  <!--side bar for book enden here-->
+  <a href="#services" onclick="openNav()">Manage Books</a>
+  <a href="#clients">Generate reports</a>
+  <a href="#contact">Contact</a>
+</div>
+ 
+<div id="mySidebar" class="sidebar">
+   <a href="#" class="closebtn" onclick="closeNav()"><span style='font-size:25px;'>&#10008;</span></a>
+  <a href="#">Add Book</a>
+  <a href="#">Update Book</a>
+  <a href="#">Delete Book</a>
+  <a href="#">Show All Book</a>
+</div>
+
+<div id="main">
+ 
+ </div>
+
+    <!--//book upload form-->
+    <h1 style="margin-left: 300px">Add  Book</h1>
+     <center>
+       <form action="./sellerBookUpload" method="post" enctype="multipart/form-data">
+            <div></br>
+
+                <table cellspacing="2px" cellpadding="2px">
+                    <tr>
+                        <td>seller_id</td>
+                        <td><input type="text" name="seller_id" id="seller_id" size="50"/></td>
+
+                    </tr>
+                    <tr>
+                        <td>book title:</td>
+                        <td><input type="text" size="50" name="book_title" ></td>
+                    </tr>
+                    <tr>
+                        <td>ISBN</td>
+                        <td><input type="text" name="isbn" size="50"></td>
+                    </tr>
+                    <tr>
+                        <td>Book Language</td>
+                        <td><input type="text" name="language" size="50"></td>
+                    </tr>
+                    <tr>
+                        <td>Author</td>
+                        <td><input type="text" name="author" size="50"></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td><input type="number" size="50" name="pageno" placeholder="minimum 50 pages required"></td>
+                    </tr>
+                    <tr>
+                        <td>Book copies/quantity</td>
+                        <td><input type="number" size="50" name="copies" placeholder="minimul 1 required"></td>
+                    </tr>
+                    <tr>
+                        <td>Book Price</td>
+                        <td><input type="number" name="price" size="50" step="any"></td>
+                    </tr>
+                    <tr>
+
+
+
+                    <tr>
+                        <td>book Discription</td>
+                        <td><textarea rows="10" cols="100" name="discription" maxlength="3500">Write about Book...</textarea>
+                        </td>
+                    </tr>
+
+
+                    <td>Book Image</td>
+                    <td> <img id="blah" src="#" alt="your image" /></br>
+                        <input type = "file" name = "file" size = "50" onchange="readURL(this);" />
+                    </td>
+
+                    </tr>
+                    <tr>
+                        <td>Book sample</td>
+                        <td><s>upload sample of book in pdf/doc etc</s><input type="file" name="book_sample" ></td>
+                    </tr>
+                     
+                        <tr>
+                            <td ></td>
+                            <td> <input type="submit" value="submit"></td>
+                        </tr>  
+
+
+
+
+                </table>
+
+
+            </div>
+        </form></center>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+   
+</body>
+</html> 

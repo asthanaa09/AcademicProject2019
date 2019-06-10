@@ -1,0 +1,29 @@
+
+
+
+
+
+
+                <div class="row" >
+                  <div ng-repeat="list in listObj">
+                    <div class="col-md-4 ">
+                        <!--<h1> <a href="Test?isbn=</*%=rs.getString("isbn")%*/>&action=ordernow"></a>Get</h1>-->
+                        <div class="card bg-gradient-warning shadow" style="width: 17rem;">
+                           
+                            <center><img class="zoom" src= "images/{{list.bookImage}}" alt="Card image cap"  style="width:270px;height:270px;padding-top: 0px"></center>
+                            <div class="card-body">
+                            </div>
+                            <a ui-sref="BookDetails({isbn:list.isbn})" style="padding-left:10px"> <p class="card-title limitContentInTags" length="50">{{list.bookTitle}}</p></a>
+                                <p class="card-text" style="padding-left:50px"><b><span><img src="img/Indian_Rupee_symbol_185519.png" style="height:15px;"></span><strong>{{list.price}}</strong></b></p>
+                                <center ng-controller="cart"> <button  ng-click="cartItem(list.isbn,list.sellerId)" class="btn bt btn-danger"><span><img src="img/crt.png"> Add</span></Button> <a ui-sref="BookDetails({isbn:list.isbn})"  class="btn bt btn-primary"><span><img src="img/btn.png"> Buy </span></a>
+                                    <!--  this is written inside the anchor tag of buy button above inside href=   "TestBuyBook.html?isbn=<%//=rs.getString("isbn")%>&action=ordernow"--> 
+                                </center>
+                                </br>
+                        </div></br>
+
+                    </div>
+
+                  
+                </div> 
+                    </div>
+            

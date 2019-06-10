@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!--// linking of corresponding java script filke-->
+
+<script src="scripts/UserProfile.js"></script>
+<script>
+     
+
+</script>
+
+
+</br>
+<center> <div class="container fixed" id="UserProfile" >
+        <div class="row ">
+            <div class="col-md-4" >
+                <div class="row">
+                    <div class="col-md-12 bg-light"><img src="img/proflepic.png" alt="poflepic" style="width:50px;">  
+                        {{listObj.firstName}}
+                       
+            
+                    </div>
+                </div></br>
+                <a  class="anchorDecoration">
+                    <div class="row">
+                    <div class="col-md-12 bg-light">
+                        <div class="row">
+                            <div class="col-md-6" style="font-size: 18px"><img src="img/ordericon.png"><span> </span>My Orders</div>
+                            <div class="col-md-6" style="font-size: 18px"><span style="font-size: 18px;padding-left: 100px"><b><img src="img/greaterthan.png"></b></span></div>
+                            
+                        </div>
+                    </div>
+                </div></a>
+                <div class="row" id="accountSetting">
+                    <div class="col-md-12 bg-light">
+                        <div class="row">
+                            <div class="col-md-8" style="font-size: 18px"><img src="img/acountSet.png"><span> </span>Account Setting</div>
+                            <div class="col-md-4"></div> 
+                        </div>
+                    </div>
+                </div>
+               <a ui-sref="userProfileSection" ui-sref-active="active"  class="anchorDecoration">
+                    <div class="row">
+                    <div class="col-md-12 bg-light">
+                       
+                            <div class="col-md-12" style="font-size: 18px"><span> </span>Profile Information</div>
+                           
+                        
+                    </div>
+                </div></a>
+                <a ui-sref="userProfileSection.manageAddresses" ui-sref-active="active" class="anchorDecoration" >
+                    <div class="row" >
+                    <div class="col-md-12 bg-light" style="font-size: 18px">
+                       
+                          <span> </span>Manage Addresses
+                           
+                        
+                    </div>
+                </div>
+                 
+                 </a>
+                 <a ui-sref="userProfileSection.ChangePassword" ui-sref-active="active" ng-click="UserDetail()"class="anchorDecoration">
+                    <div class="row">
+                    <div class="col-md-12 bg-light">
+                       
+                            <div class="col-md-12" style="font-size: 18px"><span> </span>Change Password</div>
+                           
+                        
+                    </div>
+                </div></a>
+                <hr>
+                 <div class="row" id="paymentSetting">
+                    <div class="col-md-12 bg-light">
+                        <div class="row">
+                            <div class="col-md-8" style="font-size: 18px"><img src="img/acountSet.png"><span> </span>Payments</div>
+                            <div class="col-md-4"></div> 
+                        </div>
+                    </div>
+                </div>
+
+ <a ui-sref="userProfileSection.savedCards" ui-sref-active="active" class="anchorDecoration ">
+                    <div class="row ">
+                    <div class="col-md-12 bg-light">
+                       
+                            <div class="col-md-12 data" style="font-size: 18px"><span> </span>Saved Cards</div>
+                           
+                        
+                    </div>
+                </div></a>
+            </div>
+           
+
+
+
+<div class="col-md-8">
+
+            <div ui-view="profile-info" class="col-md-12" id="viewsection">  </div>   
+<!--            <div ui-view="manage-address" class="col-md-12" id="viewsection">  </div>      
+            <div ui-view="change-password" class="col-md-12" id="viewsection">  </div> 
+             <div ui-view="saved-cards" class="col-md-12" id="viewsection">  </div>   -->
+             
+</div>
+
+                          
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>   </center>  
+
+
